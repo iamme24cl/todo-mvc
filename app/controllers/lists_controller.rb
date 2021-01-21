@@ -8,6 +8,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @item = @list.items.build
   end
 
   def create
@@ -16,7 +17,8 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to list_path(@list)
     else
-      redirect_to lists_path
+      @lists = List.all
+      render :index
     end
   end
 
@@ -30,6 +32,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit!
+    params.require(:list).permit(:name)
   end
 end
