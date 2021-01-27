@@ -1,0 +1,18 @@
+
+<section class="todoapp">
+	<header class="header">
+		<h2>Sign Up</h2>
+    <%= form_for(@user) do |f| %>
+		<%= f.text_field :name, :class => "new-todo", :placeholder => (@user.errors.full_messages_for(:name).first || "Enter Name to sign up") %>
+    <%= f.text_field :email, :class => "new-todo", :placeholder => (@user.errors.full_messages_for(:email).first || "Enter Email to sign up") %>
+		<%= f.text_field :password, :class => "new-todo", :placeholder => (@user.errors.full_messages_for(:password).first || "Choose a Password, we encrypt!") %>
+    <%= f.submit :style => "display: none" %>
+    <% end %>
+	</header>
+
+
+
+	<footer class="footer">
+	</footer>
+
+</section>

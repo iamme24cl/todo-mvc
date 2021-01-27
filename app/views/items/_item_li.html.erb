@@ -1,0 +1,15 @@
+<%= li_for_item(item) do %>
+
+  <%= form_for([@list, item]) do |f| %>
+    <div class="view">
+      <%= f.check_box :status, :class => "toggle", :checked => item.complete? %>
+  <% end %>
+
+  <label><%= item.description %></label>
+
+  <%= form_tag(list_item_path(item.list, item), :method => :delete) do %>
+    <button type="submit" class="destroy"></button>
+  <% end %>
+    </div>
+
+<% end %>

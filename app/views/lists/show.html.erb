@@ -1,29 +1,30 @@
 <section class="todoapp">
 	<header class="header">
-		<h1>todo</h1>
+		<h2><%= @list.name %></h2>
+
 		<%= form_for([@list, @item]) do |f| %>
-		<form class="" action="/lists" method="post">
 			<%= f.text_field :description, :class => "new-todo", :placeholder => (@item.errors.full_messages_for(:description).first ||"Add a new Item") %>
 			<%= f.submit :style => "display: none" %>
-			<% end %>
-		</header>
+		<% end %>
+	</header>
 
 		<section class="main">
 			<input class="toggle-all" type="checkbox">
 			<label for="toggle-all">Mark all as complete</label>
 			<ul class="todo-list">
-				<% @list.items.each do |item| %>
-				<li>
-					<div class="view">
-						<label><%= item.description %></label>
-					</div>
-				</li>
-				<% end %>
+				<%= render :collection => @list.items, :partial => "items/item_li", :as => :item %>
+
 			</ul>
 		</section>
-		<%= link_to "Home", lists_path %>
+
 
 		<footer class="footer">
+
 		</footer>
 
-	</section>
+</section>
+
+<footer class="info">
+	<p><%= link_to "Home", lists_path %></p>
+	<p><%= link_to "Logout", logout_path %></p>
+</footer>
