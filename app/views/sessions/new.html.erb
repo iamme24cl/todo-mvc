@@ -2,7 +2,7 @@
 	<div class="notice"><%= flash[:error] %></div>
 <% end %>
 
-<%= link_to('Log in with Github!', '/auth/github') %>
+
 <section class="todoapp">
 	<header class="header">
 		<h2>Log In</h2>
@@ -19,3 +19,10 @@
 	</footer>
 
 </section>
+
+<footer class="info">
+<p><b>Login with one of the following</b></p>
+<a href="/auth/google_oauth2" style='font-size:30px'><i class='fab fa-google icons'></i></a>
+<a href="/auth/facebook" style='font-size:30px'><i class='fab fa-facebook icons'></i></a>
+<a href="/auth/github" style='font-size:30px'><i class='fab fa-github icons'></i></a>
+</footer>

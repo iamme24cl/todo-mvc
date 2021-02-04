@@ -23,9 +23,14 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 gem 'omniauth-github'
 
 gem 'dotenv-rails'
+
+# install jquery for front end
+gem 'jquery-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
